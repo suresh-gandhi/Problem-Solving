@@ -4,7 +4,7 @@ You need to make changes to the given linked list in such a way that now it star
 
 Also, you need to reverse the direction of each of the links(next pointers) between adjacent nodes. 
 
-![Example](https://vichargrave.github.io/img/reverse_linked_list.png)
+![image1](https://user-images.githubusercontent.com/22693609/36640033-25bf94a8-1a3e-11e8-9af0-68b5d34405f1.png)
 
 ## Intuition
 
@@ -12,7 +12,7 @@ If we observe the problem, it is telling us to just reverse all the next pointer
 
 Now, for reversing a link we just need to set the next pointer of node B to node A as shown:-
 
-....... A B C node of a linked list ........
+![abc nodes](https://user-images.githubusercontent.com/22693609/36639997-9f9f780c-1a3d-11e8-86e5-7ed83f586351.PNG)
 
 But, if we link the next pointer of node B to node A, then we can't reach the node C from anywhere !!
 
@@ -28,7 +28,7 @@ For ease of understanding, we will have 3 pointers namely past, present and futu
 
 3. "future" refers to the next node of right node as referred earlier
 
-....... Present Past Future picture ........
+![ppp nodes](https://user-images.githubusercontent.com/22693609/36639995-9d05e446-1a3d-11e8-875b-df3188d879b1.PNG)
 
 
 Initially we have:-
