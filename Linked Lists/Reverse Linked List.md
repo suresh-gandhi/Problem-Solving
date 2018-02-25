@@ -62,7 +62,7 @@ return past
 
 Here is another animation which will make your concept more clear:-
 
-![demo](https://user-images.githubusercontent.com/22693609/36641960-4b24e53e-1a5e-11e8-8df7-93fe26237a48.gif)
+![demo](https://user-images.githubusercontent.com/22693609/36642361-7e4b9fec-1a64-11e8-801a-a1aebed37c75.gif)
 
 
 ## C++ Implementation
