@@ -42,3 +42,16 @@ So, we could say the recurrence relation for this problem is:
 
 We also observe here that we took optimal solution for the smaller problems inorder to reach to the optimal solution for the given problem.
 Hence, we could say that it shows * * Optimal Substructure Property * *.
+
+### Overlapping subproblem
+
+Consider for example an array, cost = [1, 2, 1, 4, 5, 2].
+For this we have recurrence relations as follows:-  
+* *T(6) = T(5) + T(4) + O(1)
+T(5) = T(4) + T(3) + O(1)
+T(4) = T(3) + T(2) + O(1)
+.... * *
+
+Here, we observe that T(3) is repeated in 2nd as well as 3rd equation i.e. we are solving it again.
+As we go on solving for this problem we see many such repeated calculations. Hence, in order to be efficient we need to save this 
+
