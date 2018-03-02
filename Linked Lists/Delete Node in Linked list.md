@@ -78,6 +78,35 @@ public:
 };
 ```
 
+
+## Java Implementation
+
+```
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+ 
+class Solution {
+    public void deleteNode(ListNode node) {
+        node.val = node.next.val;
+        node.next = node.next.next;
+        return;
+    }
+}
+
+```
+
 Animation for the C++ implementation could be seen below:-
 
 ![delete-node](https://user-images.githubusercontent.com/22693609/36656680-7c1a007a-1aef-11e8-84bf-76c01fcac55d.gif)
+
+## Think
+
+  * Why it is given in the problem that the access is not of the tail. What would happen otherwise? Which line of the code could lead to null pointer exception then?
+  
+  * How would our approach change if the given linked list is a doubly linked list?
