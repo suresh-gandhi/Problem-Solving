@@ -45,7 +45,7 @@ In this way we dont have to traverse the whole list and we can do the things in 
   
 #### Note:
 - It is assumed that the given node is not the tail of any linked list.
-- We also need to free the memory for the next node in some languages such as C++.
+- We also need to free the memory for the next node in some languages such as C++, but not in Java as it is automatically done by the garbage collector.
 
 ## C++ Implementation
 
