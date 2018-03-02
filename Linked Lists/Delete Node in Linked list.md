@@ -20,21 +20,22 @@ __Output__:
  
 ## Intuition
 
+Clearly we cannot delete the given node because if we delete this node there would be no links between the left part and right part of this node(i.e. the linked list would become disconnected).
+So what to do now? :confused: 
+
 If we were given the previous pointer to the node(that is to be deleted) then we could simply set:
 ```
 previous_node->next = node_to_be_deleted->next 
 ```
 and our work was done.
 
-![temp1](https://user-images.githubusercontent.com/22693609/36655032-47b62ac4-1ae6-11e8-9ae2-c9beb16b7f30.PNG)
+![delete-node-snapshot_new](https://user-images.githubusercontent.com/22399995/36889005-0a2b2d18-1e1e-11e8-9175-5f3ffd9a75ca.PNG)
 
-The **main logic behind deletion** is this linking of previous node to the right node. But, we don't have the previous node here!
+So all we need is a pointer to the previous_node. A simple and natural way is to traverse the linked list from the start till a node behind this node (__previous_node__). But this would require us to traverse the whole list in the worst case. :hushed:
 
-One important thing to notice here is that **we cannot delete the given node** because if we delete this node 
-there would be no links between the left part and right part of this node(i.e. the linked list would become disconnected).
-So what to do now?
+A good observation that one might come up with is that the __given_node__ is also a previous node of the __ahead_node__. Hence we can easily delete the __ahead_node__ using the similar logic as stated above. But we also want to take care of retaining the data of __ahead_node__. So before deleting we could simply copy its value and put it inside the given_node. 
 
-We could do something with the values inside the node. In fact we could copy the value of the next node in this node and then delete the next node. Bingo! :boom:
+In this way we dont have to traverse the whole list and we can do the things in constant time. :blush:
 
 ## Detailed Procedure
 
