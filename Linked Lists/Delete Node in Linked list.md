@@ -1,9 +1,23 @@
 ## Problem statement
 
-Write a function to delete a node (except the tail) in a linked list, when given access to only that node.
+Given an access to a node in a linked list, we have to write a function to delete that node. And also:
+  * The list is a singly linked list.
+  * The given access is not of the tail of the linked list.
 
-Suppose that the given linked list is 100 -> 200 -> 300 -> 400 and you are given the second node with value 200, then after your function call the given linked list should become 100 -> 300 -> 400 .
+## Sample Illustration
 
+__Input__: 
+      
+    head ->  100 -> 200 -> 300 -> 400 -> null
+                     ^
+                     |
+                   access
+            
+__Output__:
+
+    head ->  100 -> 300 -> 400 -> null
+              
+ 
 ## Intuition
 
 If we were given the previous pointer to the node(that is to be deleted) then we could simply set:
