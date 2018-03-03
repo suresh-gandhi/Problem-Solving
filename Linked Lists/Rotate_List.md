@@ -16,7 +16,7 @@ Output:     4->5->1->2->3->NULL .
 
 We could consider the whole linked list analogous to a big linked list with only 2 nodes. The first big node consisting the first (n-k) nodes of the given linked list and the second big node consisting of last k nodes of the given linked list, where n is the length of the given linked list.
 
-![Capture](C:\Users\Rohit\Desktop\Capture.PNG)
+![capture](https://user-images.githubusercontent.com/22693609/36936833-3852aed8-1f30-11e8-9edf-11bfaa9567d5.PNG)
 
 Now, it gets converted into a simple problem in which we have to basically place the second part in front of the first part and we are done.
 
