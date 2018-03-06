@@ -59,7 +59,7 @@ Inorder to reverse the first half, we should have an access to the middle node o
 
 ![linkedlistpalindromehelper](https://user-images.githubusercontent.com/22399995/37052614-d95f2bf0-219f-11e8-8ecc-dc5ec405e397.gif)
 
-We have the middle of the linked list now. All we need to do is now reverse the first half. Reversing a linked list is systematically explained here and can be referred.
+We have the middle of the linked list now. All we need to do is now reverse the first half. Reversing a linked list is systematically explained [here](http://summigandhi.com/) and can be referred.
 
 ## Java Implementation
 
@@ -104,6 +104,11 @@ We have the middle of the linked list now. All we need to do is now reverse the 
         }
     }
 
+## Code Animation
 
+![linkedlistpalindromecode](https://user-images.githubusercontent.com/22399995/37053847-47d332ae-21a3-11e8-9e28-d86557141dce.gif)
 
+## Think
+* Our approach was to reverse the first half and keep the second half the same. It can also be done by reversing the second half and keeping the first half same. Writing the code for it could be a good programming practice.
+* What is the time and space complexity of our approach?
 
