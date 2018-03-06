@@ -34,19 +34,61 @@ T(n) = T(n-2) + {work needed to swap first 2 nodes}.
 
 Steps to follow:-
 
-1. Swap first 2 nodes of the given linked list.
-2. Save the result for the smaller subproblem of size n-2 using recursion.
-3. Link the second node after swapping to the smaller subproblem result saved earlier.
+1. Save the result for the smaller subproblem of size n-2 using recursion.
+2. Reverting the direction of next pointer in between 1st and 2nd node(could be said as swapping too).
+3. Link the given linked list's first node(or simpply called head) to the smaller subproblem result saved earlier.
 
-This might be difficult to understand. The code snippet below will make things easy for you.
+This might be difficult to understand. The pseudo code and the corresponding animation below will make things easy for you.
 
 ```
 swapPairs(head):
     //As our new head will be the 2nd node from start
     new_head = head->next;
     
-    //This line basically says that first solve the subproblem with head->next->next
-    head->next = swapPairs(head->next->next);
-    temp->next = head;
-    return temp;
+    //Reverting the direction of next pointers                           
+    new_head->next = head;
+    
+    //Linking the given linked list's 1st node to the smaller subproblem of size (n-2) saved earlier
+    head->next = swapPairs(head->next->next);                                           
+    
+    //Finally, setting our new head as given linked list's second node
+    return new_head;
+```
+
+Animation here:-  
+
+
+
+
+
+
+## C++ Implementation
+```
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    //Inverts the first 2 nodes and then recurse for the rest
+    ListNode* swapPairs(ListNode* head) {
+        //If the given node is NULL or size of the given linked list is 1, we should return the head
+        if(head == NULL || head->next == NULL)
+            return head;
+        
+        ListNode *new_head = head->next;
+        
+        //Reverting the direction of next pointers
+        new_head->next = head;
+        
+        //Linking the given linked list's 1st node to the smaller subproblem of size (n-2) saved earlier
+        head->next = swapPairs(head->next->next);                                           
+    
+        return new_head;
+    }
+};
 ```
