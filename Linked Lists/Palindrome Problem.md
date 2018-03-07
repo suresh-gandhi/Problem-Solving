@@ -59,7 +59,7 @@ Inorder to reverse the first half, we should have an access to the middle node o
 
 ![linkedlistpalindromehelper](https://user-images.githubusercontent.com/22399995/37052614-d95f2bf0-219f-11e8-8ecc-dc5ec405e397.gif)
 
-We have the middle of the linked list now. All we need to do is now reverse the first half. Reversing a linked list is systematically explained [here](http://summigandhi.com/) and can be referred.
+We have the middle of the linked list now. All we need to do is now reverse the first half. Reversing a linked list is systematically explained [here](https://github.com/RohitJain1103/Problem-Solving/blob/master/Linked%20Lists/Reverse%20Linked%20List.md) and can be referred.
 
 ## Java Implementation
 
