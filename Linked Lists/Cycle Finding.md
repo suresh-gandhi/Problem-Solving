@@ -44,6 +44,11 @@ It is better illustrated through an animation below:
 
 ![linkedlistcyclehelper2](https://user-images.githubusercontent.com/22399995/37115970-c346cb06-2272-11e8-806a-7afc33765382.gif)
 
+Yippeee! Done with the problem :blush: Well, actually not. There is one more clever approach to this problem which is described next.
+
+
+
+
 
 
  
