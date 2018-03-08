@@ -44,7 +44,30 @@ It is better illustrated through an animation below:
 
 ![linkedlistcyclehelper2](https://user-images.githubusercontent.com/22399995/37115970-c346cb06-2272-11e8-806a-7afc33765382.gif)
 
-Yippeee! Done with the problem :blush: Well, actually not. There is one more clever approach to this problem which is described next.
+## Java Implementation:
+
+
+     public boolean hasCycle(ListNode head) {
+     
+        Set<ListNode> set = new HashSet<ListNode>();  //our container C
+        
+        ListNode temp = head;  // used for traversing the whole list
+        
+        while(temp != null){
+            if(set.contains(temp)){  // if the address is already present in our container
+                return true;
+            }
+            set.add(temp);
+            temp = temp.next;
+        }
+        
+        return false;  // if temp has reached the end and we found no repetitions.
+     }
+
+## Think: 
+* What is the time and the space complexity of this solution?
+* Can we do it without using our container C or in general without using any extra space? :confused:
+
 
 
 
