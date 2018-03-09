@@ -18,7 +18,7 @@ So, in order to solve this problem we could simply find the length of the linked
 ![length_calculation](https://user-images.githubusercontent.com/22693609/37134479-b59d6450-22be-11e8-9732-365b076dbcf0.png)
 
 
-But, there is a better way to do this and in single pass. To understand this approach we need to consider an interesting puzzle:-
+But, there is a better way to do this and in single pass and we will be discussing only this in detail for this tutorial. To understand this approach we need to consider an interesting puzzle:-
 
 Suppose, there is a straight road with a dead end. And your house is 'N' metres before that dead end. Your need to reach your home using this roadway. The twist is that you are blindfolded and can only walk in forward direction of this roadway. But to your rescue 
 you have a stick whose length is adjustable i.e. you can change the length of the stick according to your wish. 
@@ -60,14 +60,21 @@ will make it clear.
 
 ![pointers rod analogy](https://user-images.githubusercontent.com/22693609/37135412-3e181560-22c3-11e8-8050-a448a2324f86.gif)
 
-So, now we can reach the n'th node from last using this approach. But, to delete this node we must do it from the previous node. So instead of reaching this node we will try to reach the previous node.(See the note below for special case). We can then finally delete the required node and celebrate our achievement. :relieved:
+So, now we can reach the n'th node from last using this approach. But, to delete this node we must do it from the previous node. So instead of reaching this node we will try to reach the previous node.(See the note below for special case). We can then finally delete the required node and celebrate our achievement. :smile:
 
-**Note:- If there is no previous node to this or the node to delete is the first node, then our result should be simply Head->next.(here 'Head' is the head of the given Linked List).
+__**Note:-__ If there is no previous node to this or the node to delete is the first node, then our result should be simply Head->next('Head' is the head of the given Linked List).
 
 ## Detailed Procedure
 
-1. 
+1. Make the stick by having 2 pointers at a distance of 'n' nodes.
 
+2. Move both the pointers simultaneously ahead until second pointer has reached the node previous to NULL.
+
+3. Delete the node next to the first pointer by just setting first->next = first->next->next.
+
+__Note:__
+- If the node to delete is the head node then as discussed earlier we will just return head->next. This will happen only when the second node has reached NULL while making the stick.
+- We also need to free the memory for the next node in some languages such as C++, but not in Java as it is automatically done by the garbage collector.
 
 ## C++ Implementation
 
@@ -85,29 +92,28 @@ class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
         
-        //These are the 2 pointers for making the rod
+        //These are the 2 pointers for making the stick
         ListNode *first,*second;
         first = second = head;
         
-        //Shifting second node n nodes ahead to make the rod of length 'n'
+        //Shifting second node n nodes ahead to make the stick of length 'n'
         for(int i=0;i<n;i++)
             second = second->next;
         
         //Special case: First node deletion
-        //If the rod's other end has already reached dead end, then simply return the node next to head
+        //If the stick's other end has already reached dead end, then simply return the node next to head
         if(!second){
             ListNode* new_head = head->next;
             free(head);
             return new_head;
         }
       
-        //Move the rod until the rod's second end has reached the node prevoius to NULL
+        //Move the stick until the stick's second end has reached the node previous to NULL
         while(second->next){
-            //As the rod is rigid, moving both the pointers equally
+            //As the stick is rigid, moving both the pointers equally
             first = first->next;
             second = second->next;
         }
-        
         
         ListNode* waste = first->next;
         
@@ -121,3 +127,15 @@ public:
     }
 };
 ```
+
+Code Animation : - 
+
+## Think
+
+- Visualize on your own the whole procedure for special case of 'first node deletion' as discussed in the note.
+
+- Why can't we go to that node which is to be deleted and use [this](https://github.com/RohitJain1103/Problem-Solving/blob/master/Linked%20Lists/Delete%20Node%20in%20Linked%20list.md) to delete the required node?
+
+- According to you which method is more efficient?
+  1. 1st method(Calculating the length and then deleting the necessary node).
+  2. 2nd method(Stick method).
