@@ -36,7 +36,7 @@ Steps to follow:-
 
 1. Save the result for the smaller subproblem of size n-2 using recursion.
 2. Reverting the direction of next pointer in between 1st and 2nd node(could be said as swapping too).
-3. Link the given linked list's first node(or simpply called head) to the smaller subproblem result saved earlier.
+3. Link the given linked list's first node(or simply called head) to the smaller subproblem result saved earlier.
 
 This might be difficult to understand. The pseudo code and the corresponding animation below will make things easy for you.
 
@@ -55,12 +55,12 @@ swapPairs(head):
     return new_head;
 ```
 
-Animation here:-  
-
-
-
-
-
+#### Note:
+There are 2 very important special cases we need to consider here. They are:-
+- When the Linked List has no nodes.
+- When the Linked List consists of only one node.
+                
+In both these cases we can simply return the Linked List as it is. The code below is adjusted according to this fact.
 
 ## C++ Implementation
 ```
@@ -92,3 +92,9 @@ public:
     }
 };
 ```
+
+Animation Here:- 
+
+## Think
+
+- We have seen an easy to understand recursive approach here. Now try to solve this problem iteratively.
