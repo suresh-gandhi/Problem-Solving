@@ -27,7 +27,8 @@ Here, we noticed that in order to solve the given problem we needed to solve a s
 Hence, it would use the concept of recursion and the recurrence relation for the same is:-
 
 ```
-T(n) = T(n-2) + {work needed to swap first 2 nodes}.
+        T(n)                =            T(n-2)                +        {work needed to swap first 2 nodes}.
+{Work to do for n nodes}          {Work to do for n-2 nodes} 
 ```
 
 ## Detailed Procedure
@@ -35,8 +36,8 @@ T(n) = T(n-2) + {work needed to swap first 2 nodes}.
 Steps to follow:-
 
 1. Save the result for the smaller subproblem of size n-2 using recursion.
-2. Reverting the direction of next pointer in between 1st and 2nd node(could be said as swapping too).
-3. Link the given linked list's first node(or simply called head) to the smaller subproblem result saved earlier.
+2. Link the given linked list's first node(or simply called head) to the smaller subproblem result.
+3. Revert the direction of next pointer in between 1st and 2nd node(could be said as swapping too).
 
 This might be difficult to understand. The pseudo code and the corresponding animation below will make things easy for you.
 
@@ -45,11 +46,11 @@ swapPairs(head):
     //As our new head will be the 2nd node from start
     new_head = head->next;
     
-    //Reverting the direction of next pointers                           
-    new_head->next = head;
-    
     //Linking the given linked list's 1st node to the smaller subproblem of size (n-2) saved earlier
     head->next = swapPairs(head->next->next);                                           
+    
+    //Reverting the direction of next pointers                           
+    new_head->next = head;
     
     //Finally, setting our new head as given linked list's second node
     return new_head;
@@ -60,7 +61,7 @@ There are 2 very important special cases we need to consider here. They are:-
 - When the Linked List has no nodes.
 - When the Linked List consists of only one node.
                 
-In both these cases we can simply return the Linked List as it is. The code below is adjusted according to this fact.
+In both these cases we can simply return the Linked List as it is because we cannot swpa nodes anymore. The code below is adjusted according to this fact.
 
 ## C++ Implementation
 ```
@@ -82,11 +83,11 @@ public:
         
         ListNode *new_head = head->next;
         
-        //Reverting the direction of next pointers
-        new_head->next = head;
-        
         //Linking the given linked list's 1st node to the smaller subproblem of size (n-2) saved earlier
         head->next = swapPairs(head->next->next);                                           
+        
+        //Reverting the direction of next pointers
+        new_head->next = head;
     
         return new_head;
     }
