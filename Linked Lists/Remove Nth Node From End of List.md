@@ -97,12 +97,12 @@ public:
         first = second = head;
         
         //Shifting second node n nodes ahead to make the stick of length 'n'
-        for(int i=0;i<n;i++)
+        for(int i=0; i<n; i++)
             second = second->next;
         
         //Special case: First node deletion
         //If the stick's other end has already reached dead end, then simply return the node next to head
-        if(!second){
+        if(second == NULL){
             ListNode* new_head = head->next;
             free(head);
             return new_head;
@@ -128,7 +128,7 @@ public:
 };
 ```
 
-Code Animation : - 
+![remove nth node from end of list](https://user-images.githubusercontent.com/22693609/37240556-1928416a-2473-11e8-99f1-0506ef7dabf4.gif)
 
 ## Think
 
