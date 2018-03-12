@@ -25,13 +25,62 @@ we are good to go.
 
 Now, for making the odd cluster we must maintain 2 pointers, one as its head and the other as its tail. Same goes for even cluster too. 
 Inserting part in each of the cluster just adds the new node to its tail.
-
-
-Animation for insertion :-
-
-
 And at last we just link the end of cluster1 to start of cluster2.
 
-Steps to follow are as follows:-
+#### Steps to follow are as follows:-
 
-1. 
+1. We first set the oddhead, oddtail and evenhead, eventail as head and head->next respectively.
+
+2. Do until eventail is NULL or eventail is just before NULL:-
+      - Link the odd part by just setting oddtail->next = oddtail->next->next and similarly for the even part too.
+      - Move both the pointers forward.
+      
+3. Finally link the oddtail to evenhead to get the desired output.
+
+**If this doesn't makes sense, then just see the code snippet and the corresponding animation below.**
+
+## C++ Implementation
+
+```
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* oddEvenList(ListNode* head) {
+        
+        //If given linked list is NULL, we just return as it is
+        if(!head)
+            return head;
+        
+        ListNode *oddhead = head, *evenhead = head->next;
+        
+        //This is the tail part of the 2 clusters which is used for linking
+        ListNode *oddtail = oddhead, *eventail = evenhead;
+        
+        //Do until eventail has become null OR just before null
+        while(eventail && eventail->next){
+            
+            //Linking the odd part
+            oddtail->next = oddtail->next->next;
+            
+            //Linking the even part
+            eventail->next = eventail->next->next;
+            
+            //Moving both the pointers ahead
+            oddtail = oddtail->next;
+            eventail = eventail->next;
+        }
+        
+        //Linking the 1st cluster to 2nd cluster
+        oddtail->next = evenhead;
+        
+        return oddhead;
+        }
+};
+```
