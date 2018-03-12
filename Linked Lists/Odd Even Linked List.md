@@ -8,8 +8,9 @@ __**Note:__  It would be nice if you solve it without making a new linked list.
 
 ## Sample Illustration
 
-Input: 1->2->3->4->5->NULL,
-Output: 1->3->5->2->4->NULL.
+__Input:__ 1->2->3->4->5->NULL,
+
+__Output:__ 1->3->5->2->4->NULL.
 
 ## Intuition
 
@@ -17,10 +18,7 @@ For clustering all the odd nodes together we must link the 1st node to 3rd node,
 even nodes we must link the 2nd node to 4th node, 4th node to 6th and so on. And finally link the end of cluster1 to start of cluster2 and 
 we are good to go.
 
-
-
-Animation for basic procedure:-
-
+![odd even linked list1](https://user-images.githubusercontent.com/22693609/37279827-ee9fd5d4-2611-11e8-8834-b33cba6d3eee.gif)
 
 
 ## Detailed Procedure
