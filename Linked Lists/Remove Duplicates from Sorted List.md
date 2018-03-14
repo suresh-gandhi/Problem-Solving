@@ -16,8 +16,6 @@ Given a sorted singly linked list, delete all duplicates (i.e. nodes with duplic
 
 One subtle thing to notice here is that after deletion process we are only left with the first elements of each unique value.
 
-![remove duplicates from sorted list1](https://user-images.githubusercontent.com/22693609/37385609-9fd5f1f8-277a-11e8-8d88-1c865e9f9475.png)
-
 So, we should basically find a way to delete all the nodes except these first occuring nodes. For that we could simply link these first 
 occuring nodes only.
 
