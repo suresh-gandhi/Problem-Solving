@@ -23,14 +23,23 @@ occuring nodes only.
 
 ![remove duplicates from sorted list2](https://user-images.githubusercontent.com/22693609/37389131-15b4ba22-2789-11e8-95c4-1aa3129798b6.gif)
 
-## Detailed Procedure
+## Procedure
 
+We will have 2 pointers to serve our purpose, 'first' pointer for first occuring nodes and 'duplicates' for seeing duplicates occurring in the Linked List.
 
+__Basic steps to follow are:-__
 
+- Do until first is NULL:
+   
+   - Set first and duplicates pointer at same node.
+   - Move the duplicates pointer forward until it has different value from first->value or it is NULL.
+   - Set the link between them by doing first->next = duplicates.
+   - Move first pointer forward by setting first = first->next.
+   
+- Return the head pointer.
 
 __**Note:__ The code snippet below is simplified just for better understanding purposes and is not the best way for implementation. 
 It doesn't frees the memory and causes memory leakage.
-
 
 ## C++ Implementation
 
@@ -60,8 +69,8 @@ public:
             
             duplicates = first;
             
-            //Move duplicates forward if it has same value as first
-            //And duplicates must not be NULL too
+            //Move duplicates forward until it has same value as first or it is NULL
+            
             while( duplicates    &&   duplicates->val == first->val ) 
                 duplicates = duplicates->next;  //Memory leakage
             
@@ -77,3 +86,11 @@ public:
     }
 };
 ```
+
+
+Code Animation:-
+
+
+## Think 
+
+- Now try to solve a small variation of this problem [here](Link to be updated).
