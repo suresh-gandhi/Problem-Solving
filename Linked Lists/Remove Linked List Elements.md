@@ -1,6 +1,6 @@
 ## Problem Statement
 
-In a singly Linked list remove all nodes that have value val.
+In a singly Linked list remove all nodes that have value as 'val'.
 
 ## Sample Illustration
 
@@ -19,9 +19,12 @@ previous_node->next = present_node->next
 //// Gif ////
 
 
-But what to do if we have to delete the head node too.
+But what to do if we have to delete the head node too? 
+For that we just return head->next as our result.
 
 ## Detailed Procedure
+
+
 
 
 
@@ -53,7 +56,7 @@ public:
             if(present->val == val)
                 past->next = present->next;
             
-            //If node is not to be deleted, we move forward
+            //If node is not to be deleted, we update the past
             else
                 past = past->next;
             
