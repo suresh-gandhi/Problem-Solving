@@ -16,6 +16,7 @@ __Output:__
         head -> 2 -> 1 -> 4 -> 5 -> 8 -> 3 -> null
         
 __Animation:__
+
  ![sampleillustration](https://user-images.githubusercontent.com/22399995/37825344-727cd09a-2eb5-11e8-90b3-f9658d59ef94.gif)
 
 
