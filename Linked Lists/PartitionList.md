@@ -43,6 +43,33 @@ We are simply rearranging the nodes here and hence using no extra space. :blush:
 
 We will make the two buckets using two dummy nodes([When and How to use dummy/sentinel nodes](https://www.summigandhi.com/)). This would greatly help us to smoothen our implementation.
 
+## Java Implementation
+
+     class Solution {
+        public ListNode partition(ListNode head, int x) {
+        
+               ListNode dummy1 = new ListNode(-1);
+               ListNode dummy2 = new ListNode(-2);
+               ListNode temp1 = dummy1;
+               ListNode temp2 = dummy2;
+    
+               for(ListNode temp = head; temp != null; temp = temp.next){             // traversing the given linked list
+                  if(temp.val < x){                                                   // if it belongs to the first bucket
+                        temp1.next = temp;
+                        temp1 = temp1.next;
+                  }
+                  else{                                                               // else it should belong to the second bucket
+                        temp2.next = temp;
+                        temp2 = temp2.next;
+                  }
+               }
+        
+               temp1.next = dummy2.next;                                              // bucket1 end -> bucket2 start
+               temp2.next = null;                                                     // bucket2 end -> null
+        
+               return dummy1.next;                                                    // return bucket1 start
+        }
+     }
 
 
 
