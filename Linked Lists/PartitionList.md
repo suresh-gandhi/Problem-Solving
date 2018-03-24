@@ -2,7 +2,7 @@
 
 We are given a linked list and a value x, partition it such that all the nodes less than x come before nodes greater than or equal to x.
 
-__NOTE__: The relative order of the nodes in each of the two partitions should be preserved.
+__NOTE__: The relative order of the nodes should be preserved.
 
 ## Sample Illustration
 
@@ -28,5 +28,17 @@ We can create an array of the same size as that of linked list. Now we can trave
 The animation given below better illustrates this:
 
 ![intuition1](https://user-images.githubusercontent.com/22399995/37829339-a4fcc35e-2ec4-11e8-91d9-33d369a5ef3b.gif)
+
+### Whats inefficient about it?
+Well this works perfectly but the only problem is that, it uses an extra space which is nothing but our auxiliarry array. If the length of the given linked list is very large for this problem then this algorithm would require a very large extra space as well which makes it space inefficient. Is there anything we can do to restructure(or partition) our linked list without using any extra space? :confused:
+
+### A Better Approach
+All we have to do is to partition the existing linked list into two parts which are 1. less than part 2. greater than or equal to part.
+So what we can do is make two buckets (A and B). We traverse the given linked list from left to right and put the nodes in the respective bucket based on whether the data it contains is less than or greater than/equals to the partition. At last we simply connect both of them in order.
+
+The approach is better illustrated through the animation given below:
+![intuition2](https://user-images.githubusercontent.com/22399995/37860785-d28dc85c-2f52-11e8-96ad-e08b969c1553.gif)
+
+We are simply rearranging the nodes here and using no extra space. :blush:
 
 
