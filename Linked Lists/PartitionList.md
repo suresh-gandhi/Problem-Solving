@@ -71,6 +71,14 @@ We will make the two buckets using two dummy nodes([When and How to use dummy/se
         }
      }
 
+## Code Animation
+The code animation given below illustrates the code better:
+![codeanimation](https://user-images.githubusercontent.com/22399995/37863909-680a01dc-2f8c-11e8-9ca8-db2ba80224b7.gif)
+
+## Think
+* Try coding this problem without the use of dummy nodes and see the difference in implementation and checking of edge cases?
+
+
 
 
 
