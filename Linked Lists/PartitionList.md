@@ -39,6 +39,12 @@ So what we can do is make two buckets (A and B). We traverse the given linked li
 The approach is better illustrated through the animation given below:
 ![intuition2](https://user-images.githubusercontent.com/22399995/37860785-d28dc85c-2f52-11e8-96ad-e08b969c1553.gif)
 
-We are simply rearranging the nodes here and using no extra space. :blush:
+We are simply rearranging the nodes here and hence using no extra space. :blush:
+
+We will make the two buckets using two dummy nodes([When and How to use dummy/sentinel nodes](https://www.summigandhi.com/)). This would greatly help us to smoothen our implementation.
+
+
+
+
 
 
