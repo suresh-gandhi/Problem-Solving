@@ -22,3 +22,24 @@ If we look carefully at the output we have to return(which is nothing but the re
 
 ![intuition1](https://user-images.githubusercontent.com/22399995/37875640-e3cfe506-305f-11e8-97b7-e1c2905c9662.gif)
 
+So basically the problem just reduces to sandwiching of the two lists which are 
+* The first half of the original list
+* The second half of the original list but in reversed order(See [this](https://www.summigandhi.com/) post on how to reverse a linked list)
+
+We are progressing. Yohoo! :grinning:
+
+### How to sandwich one list into another?
+Sandwiching one list into another is just a bit of pointer manipulation. I think it is better understood through an animation rather than text. The animation is given below:
+
+![intuition2](https://user-images.githubusercontent.com/22399995/37876932-53b43b7c-3071-11e8-8c69-79926ca7d7cc.gif)
+
+In a nutshell -> 
+
+1. Simply divide the original list into two parts i.e. __the first half part__ and __the second half part but reversed__.
+2. Sandwich the second part into the first part.
+3. Return the new list. :blush:
+
+
+
+
+
