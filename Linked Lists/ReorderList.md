@@ -14,5 +14,12 @@ __Input__:
 __Output__:
 
           ReorderedList: head -> 1 -> 6 -> 2 -> 5 -> 3 -> 4 -> null
-          
+        
+## Intuition
+
+### A closer look into the reordered list structure :eyes:
+If we look carefully at the output we have to return(which is nothing but the reordered list), then we can observe that it is actually composed of two smaller lists with one of them sandwiched into another. The animation given below better illustrates this observation:
+
+![intuition1](https://user-images.githubusercontent.com/22399995/37875571-d1d21be0-305e-11e8-9651-ff4f59d173d7.gif)
+
 
